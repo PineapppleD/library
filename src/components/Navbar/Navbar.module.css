@@ -2,11 +2,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 289px;
+    width: 289px;    
 }
 
 .burger_menu { 
     display: none;
+    cursor: pointer;
+}
+
+.burger_menu * {
+    transition: 0.3s all;
+}
+
+.burger_menu_open > span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 14px;
+}
+
+.burger_menu_open > span:nth-child(2) {
+    display: none;
+}
+
+.burger_menu_open > span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 9px;
 }
 
 @media (max-width: 998px) {
