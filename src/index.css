@@ -1,0 +1,248 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,700);
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url('OpenSansCondensed-Light.eot');
+    src: local('Open Sans Condensed Light'), local('OpenSansCondensed-Light'),
+        url('OpenSansCondensed-Light.eot?#iefix') format('embedded-opentype'),
+        url('OpenSansCondensed-Light.woff') format('woff'),
+        url('OpenSansCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url('OpenSansCondensed-Bold.eot');
+    src: local('Open Sans Condensed Bold'), local('OpenSansCondensed-Bold'),
+        url('OpenSansCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('OpenSansCondensed-Bold.woff') format('woff'),
+        url('OpenSansCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root {
+    --font-open-sans: 'Open Sans Condensed', sans-serif;
+    --font-source-code: 'Source Code Pro';
+    --black: #1D2023;
+    --gray: #CCC8FD;
+    --white: #fff;
+    --milk: #FDE6AB;
+    --primary: #5A75FE;
+    --green: #327456;
+    --gray-light: #F2F3F7;
+    --golden: #FFD055;
+    --red: #953131;
+}
+
+
+.container {
+    padding: 0 9%;
+}
+
+
+.bg_green {
+    background: var(--green);
+}
+
+.bg_gray_light {
+    background: var(--gray-light);
+}
+
+.bg_black {
+    background: var(--black);
+}
+
+.bg_white {
+    background: var(--white);
+}
+
+.bg_gray {
+    background: var(--gray);
+}
+
+.bg_milk {
+    background: var(--milk);
+}
+
+.bg_primary {
+    background: var(--primary);
+}
+
+.bg_golden {
+    background: var(--golden);
+}
+
+.bg_red {
+    background: var(--red);
+}
+
+.black {
+    color: var(--black);
+}
+
+.gray {
+    color: var(--gray);
+}
+
+.white {
+    color: var(--white);
+}
+
+.milk {
+    color: var(--milk);
+}
+
+.green {
+    color: var(--green);
+}
+
+.primary {
+    color: var(--primary)
+}
+
+.red {
+    color: var(--red)
+}
+
+.golden {
+    color: var(--golden)
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 6%;
+    }
+}

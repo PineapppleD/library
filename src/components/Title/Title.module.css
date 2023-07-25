@@ -1,0 +1,32 @@
+.title {
+    font-family: var(--font-source-code);
+    letter-spacing: 0.1em;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.semi_bold {
+    font-weight: 600;
+}
+
+.title_xs {
+    font-size: 28px;
+}
+
+.title_s {
+    font-size: 32px;
+}
+
+.title_m {
+    font-size: 34px;
+}
+
+.title_l {
+    font-size: 36px;
+}
+
+.title_xl {
+    font-size: 44px;
+}

@@ -1,0 +1,51 @@
+.special_block {
+    position: relative;
+    bottom: 80px;
+}
+
+.first_line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 46px;
+    margin-top: 29px;
+}
+
+.p {
+    font-family: var(--font-open-sans);
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.special_block > div {
+    position: relative;
+}
+
+.special_block_next_img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+}
+
+.special_block_prev_img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    cursor: pointer;
+}
+
+.special_block_books_list {
+    margin-left: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1225px;
+}
+
+@media (max-width: 998px) {
+    
+}
+

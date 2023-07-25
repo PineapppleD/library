@@ -1,0 +1,29 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 289px;
+}
+
+.burger_menu { 
+    display: none;
+}
+
+@media (max-width: 998px) {
+    .burger_menu {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+    }
+
+    .burger_menu > * {
+        border: 1px solid var(--black);
+    }
+
+    .navbar {
+        display: none;
+    }
+}

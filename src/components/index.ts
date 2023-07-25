@@ -1,0 +1,11 @@
+export { default as Text } from "./Text/Text";
+export { default as Logo } from "./Logo/Logo";
+export { default as Title } from "./Title/Title";
+export { default as Button } from "./Button/Button";
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as Image } from "./Image/Image";
+export { default as SearchBar } from "./SearchBar/SearchBar";
+export { default as Header } from "./Header/Header";
+export { default as Hero } from "./Hero/Hero";
+export {default as Block } from './Block/Block';
+export {default as Main } from './Main/Main';

@@ -1,0 +1,36 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.logo_lines {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logo_lines>.line {
+    height: 1px;
+    width: 32px;
+    background-color: var(--black);
+    display: inline-block;
+}
+
+.logo_lines > .line:nth-child(2) {
+    width: 17px;
+    align-self: self-end;
+}
+
+.logo_text {
+    font-family: var(--font-source-code);
+    color: var(--black);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.logo_text > span {
+    color: #FF1F00;
+}

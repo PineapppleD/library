@@ -1,0 +1,29 @@
+.button {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-open-sans);
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.login_button {
+    padding: 14px 27px;
+}
+
+.common_book_button {
+    padding: 13px 72px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 756px) {
+    .common_book_button {
+        padding: 13px 38px;
+    }
+}
