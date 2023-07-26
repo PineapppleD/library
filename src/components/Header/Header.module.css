@@ -6,6 +6,10 @@
     margin-bottom: 20px;
 }
 
+.header * {
+    transition: 0.2s all;
+}
+
 .first_column {
     display: flex;
     flex-direction: column;
@@ -31,5 +35,34 @@
 
     .second_column {
         gap: 30px;
+    }
+}
+
+@media (max-width: 667px) {
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .first_column,
+    .second_column {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .first_column {
+        flex-direction: row;
+    }
+
+
+    .second_column > button {
+        padding: 0;
+        background: inherit;
+        color: var(--black);
+    }  
+
+    .header_logo {
+        display: none;
     }
 }

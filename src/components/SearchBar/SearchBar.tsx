@@ -3,7 +3,7 @@ import styles from "./SearchBar.module.css";
 import { SearchBarProps } from "./SearchBar.props";
 import { useState } from "react";
 
-function SearchBar(props: SearchBarProps) {
+function SearchBar({setDisplay}: SearchBarProps) {
   const [screen, setScreen] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
 
@@ -15,7 +15,10 @@ function SearchBar(props: SearchBarProps) {
 
   const buttonHandler = () => {
     screen < 998 ? setOpen(prev => !prev) : null;
+    // screen < 667 ? setDisplay(prev => !prev) : null;
   };
+
+
 
   return (
     <div className={styles.search_bar}>

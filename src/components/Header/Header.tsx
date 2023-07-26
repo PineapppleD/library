@@ -35,7 +35,7 @@ function Header() {
       </div>
       {display && (
         <div className={styles.second_column}>
-          <SearchBar className={styles.header_search} />
+          <SearchBar setDisplay={setDisplay} className={styles.header_search} />
           <Button
             className="loginbutton"
             fontSize={16}

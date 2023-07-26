@@ -246,3 +246,9 @@ table {
         padding: 0 6%;
     }
 }
+
+@media (max-width: 998px) {
+    .container {
+        padding: 0 30px;
+    }
+}

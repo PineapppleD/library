@@ -15,7 +15,6 @@ const HeroTextSection: React.FC<IBooks> = ({ title, description }) => {
         </Text>
         <Button
           className={styles.hero_btn}
-          padding="4px 13px"
           color="red"
           background="golden"
           fontWeight={700}
