@@ -6,6 +6,7 @@ function Title({ titleSize, titleColor, children, titleWeight, className }: Titl
   return (
     <p
       className={cn(styles.title, {
+        [styles.title_xxs]: titleSize === 24,
         [styles.title_xs]: titleSize === 28,
         [styles.title_s]: titleSize === 32,
         [styles.title_m]: titleSize === 34,

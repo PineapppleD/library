@@ -6,5 +6,7 @@ export interface SpecialBlockProps {
   endpoint: string;
   color: 'black' | 'white' | 'gray' | 'milk' | 'green' | 'golden';
   borderRadius: string,
-  background?: "#fff" | "#969FA8";
+  background?: "#fff" | "#EE82EE";
+  booktype: "commonbook" | "audiobook";
+  height: string;
 }

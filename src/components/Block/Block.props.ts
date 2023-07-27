@@ -6,7 +6,7 @@ export interface BlockProps
     HTMLDivElement
   > {
   borderRadius?: string;
-  background?: "#fff" | "#969FA8";
+  background?: "#fff" | "#EE82EE";
   height: string;
   children: ReactNode;
 }

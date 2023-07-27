@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Block, Title, Text } from "../..";
-import Book from "../../Book/Book";
-import styles from "../Main.module.css";
+import { Block, Title, Text, Book } from "../../..";
+import styles from "../../Main.module.css";
 import { SpecialBlockProps } from "./SpecialBlock.props";
-import { fetchData } from "../../../assets";
-import { IBooks } from "../../../interfaces/Books";
+import { fetchData } from "../../../../assets";
+import { IBooks } from "../../../../interfaces/Books";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -13,8 +12,10 @@ function SpecialBlock({
   description,
   color,
   endpoint,
+  background = "#fff",
   borderRadius,
-  background,
+  booktype,
+  height,
 }: SpecialBlockProps) {
   const [books, setBooks] = useState<IBooks[] | never[]>([]);
 
@@ -51,7 +52,7 @@ function SpecialBlock({
   return (
     <Block
       className={`${styles.special_block} container`}
-      height="618px"
+      height={height}
       borderRadius={borderRadius}
       background={background}
     >
@@ -73,13 +74,12 @@ function SpecialBlock({
         <Carousel responsive={responsive}>
           {books.map((book, index) => {
             return (
-              <div key={index}>
-                <Book
-                  className="commonbook"
-                  title={book.title}
-                  imgUrl={book.book_image}
-                />
-              </div>
+              <Book
+                key={index}
+                className={booktype}
+                title={book.title}
+                imgUrl={book.book_image}
+              />
             );
           })}
         </Carousel>

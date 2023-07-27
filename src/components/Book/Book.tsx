@@ -3,7 +3,6 @@ import { addSvg } from "../../assets/images";
 import cn from "classnames";
 import styles from "./Book.module.css";
 
-
 interface BookProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
