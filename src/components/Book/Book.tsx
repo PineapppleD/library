@@ -10,38 +10,31 @@ interface BookProps
   > {
   imgUrl: string;
   title: string;
-  className: "commonbook" | "audiobook";
+  className?: string;
 }
 
 function Book({ imgUrl, title, className }: BookProps) {
-
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        gap: "14px",
-      }}
-    >
-      <img
+    <div>
+      <div
         className={cn(styles.book, {
           [styles.commonbook]: className === "commonbook",
           [styles.audiobook]: className === "audiobook",
+          [styles.minibook]: className === "minibook",
         })}
-        src={imgUrl}
-        alt={title}
-      />
-      <Button
-        className="bookbutton"
-        fontSize={18}
-        fontWeight={300}
-        background="gray"
-        color="black"
       >
-        <img src={addSvg} alt="отложить" />
-        Отложить
-      </Button>
+        <img className={styles.book_image} src={imgUrl} alt={title} />
+        <Button
+          className="bookbutton"
+          fontSize={18}
+          fontWeight={300}
+          background="gray"
+          color="black"
+        >
+          <img src={addSvg} alt="отложить" />
+          Отложить
+        </Button>
+      </div>
     </div>
   );
 }

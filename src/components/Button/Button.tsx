@@ -9,6 +9,7 @@ function Button({
   color,
   fontWeight,
   className,
+  onClick,
 }: ButtonProps) {
   const buttonStyles = {
     fontSize,
@@ -17,12 +18,14 @@ function Button({
 
   return (
     <button
+      onClick={onClick}
       style={buttonStyles}
       className={cn(
         styles.button,
         {
           [styles.common_book_button]: className === "bookbutton",
           [styles.login_button]: className === 'loginbutton',
+          [styles.pagination_button]: className === 'paginationbutton',
           bg_golden: background === "golden",
           bg_black: background === "black",
           bg_gray: background === "gray",
@@ -35,6 +38,7 @@ function Button({
           red: color === "red",
           gray: color === "gray",
         },
+        className
       )}
     >
       {children}

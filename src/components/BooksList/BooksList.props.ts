@@ -1,7 +1,9 @@
-export interface NavbarProps
+import { IBooks } from "../../interfaces/Books";
+
+export interface BooksListProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLUListElement>,
     HTMLUListElement
   > {
-  setDisplay: React.Dispatch<React.SetStateAction<boolean>>;
+  books: IBooks[];
 }

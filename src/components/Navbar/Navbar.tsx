@@ -1,8 +1,10 @@
 import { NavbarProps } from "./Navbar.props";
 import styles from "./Navbar.module.css";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { Text } from "..";
 
-function Navbar({ childrenList, setDisplay }: NavbarProps): JSX.Element {
+function Navbar({ setDisplay }: NavbarProps): JSX.Element {
   const [menu, setMenu] = useState(false);
   const [screen, setScreen] = useState(window.innerWidth);
 
@@ -21,7 +23,7 @@ function Navbar({ childrenList, setDisplay }: NavbarProps): JSX.Element {
 
   useEffect(() => {
     if (screen > 998) {
-      setMenu(false)
+      setMenu(false);
       setDisplay(true);
     }
   }, [screen, setDisplay]);
@@ -33,19 +35,49 @@ function Navbar({ childrenList, setDisplay }: NavbarProps): JSX.Element {
 
   return (
     <>
-      {(
+      {
         <ul
           style={{
-            display: menu ? "flex" : ""
+            display: menu ? "flex" : "",
           }}
           className={styles.navbar}
         >
-          {childrenList.map((e: JSX.Element) => (
-            <li key={e.props.children}>{e}</li>
-          ))}
+          <li>
+            <NavLink to="/">
+              <Text textSize={18} textColor="black">
+                Главная
+              </Text>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/books">
+              <Text textSize={18} textColor="black">
+                Книга
+              </Text>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/audio">
+              <Text textSize={18} textColor="black">
+                Аудио
+              </Text>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">
+              <Text textSize={18} textColor="black">
+                О нас
+              </Text>
+            </NavLink>
+          </li>
         </ul>
-      )}
-      <div onClick={menuHandler} className={` ${styles.burger_menu} ${menu ? styles.burger_menu_open : ''}`}>
+      }
+      <div
+        onClick={menuHandler}
+        className={` ${styles.burger_menu} ${
+          menu ? styles.burger_menu_open : ""
+        }`}
+      >
         <span></span>
         <span></span>
         <span></span>

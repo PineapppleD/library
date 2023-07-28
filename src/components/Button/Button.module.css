@@ -10,12 +10,17 @@
     gap: 14px;
 }
 
-.login_button {
+.login_button,
+.pagination_button {
     padding: 14px 27px;
 }
 
 .common_book_button {
-    padding: 13px 72px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 0;
 }
 
 .button:hover {
@@ -23,7 +28,16 @@
 }
 
 @media (max-width: 756px) {
-    .common_book_button {
-        padding: 13px 38px;
+    .pagination_button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 572px) {
+        .buttons > button {
+        background: none;
+        padding: 5px;
+
     }
 }

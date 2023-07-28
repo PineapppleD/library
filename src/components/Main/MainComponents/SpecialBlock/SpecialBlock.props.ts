@@ -1,5 +1,3 @@
-
-
 export interface SpecialBlockProps {
   title: string;
   description?: string;

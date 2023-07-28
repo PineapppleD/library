@@ -6,4 +6,5 @@ export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAtt
   background: "black" | "gray" | "gray-light" | "milk" | "golden";
   color: 'white' | 'black' | 'green' | 'primary' | 'red' | 'gray';
   children: ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

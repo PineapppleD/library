@@ -153,6 +153,10 @@ table {
     border-spacing: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 :root {
     --font-open-sans: 'Open Sans Condensed', sans-serif;
     --font-source-code: 'Source Code Pro';

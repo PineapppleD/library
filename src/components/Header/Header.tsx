@@ -5,20 +5,6 @@ import styles from "./Header.module.css";
 import { useState } from "react";
 
 function Header() {
-  const navlist = [
-    <Text textSize={18} textColor="black">
-      Главная
-    </Text>,
-    <Text textSize={18} textColor="black">
-      Книга
-    </Text>,
-    <Text textSize={18} textColor="black">
-      Аудио
-    </Text>,
-    <Text textSize={18} textColor="black">
-      О нас
-    </Text>,
-  ];
 
   const [display, setDisplay] = useState(true);
   const className = `${styles.header} container`;
@@ -30,7 +16,6 @@ function Header() {
         <Navbar
           setDisplay={setDisplay}
           className={styles.header_navbar}
-          childrenList={navlist}
         />
       </div>
       {display && (

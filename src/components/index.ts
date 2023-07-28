@@ -11,3 +11,5 @@ export { default as Block } from "./Block/Block";
 export { default as Main } from "./Main/Main";
 export { default as Book } from "./Book/Book";
 export { default as Footer } from "./Footer/Footer";
+export { default as BookDescription } from "./BookDescription/BookDescription";
+export { default as BooksList } from "./BooksList/BooksList";
