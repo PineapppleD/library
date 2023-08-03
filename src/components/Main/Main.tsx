@@ -1,6 +1,5 @@
 import SpecialBlock from "./MainComponents/SpecialBlock/SpecialBlock";
 
-
 function Main() {
   return (
     <main>
@@ -10,7 +9,6 @@ function Main() {
         borderRadius="60px"
         title="Специально для вас"
         color="black"
-        endpoint="culture"
       />
       <SpecialBlock
         height="570px"
@@ -19,7 +17,6 @@ function Main() {
         borderRadius="0"
         title="О любви"
         color="milk"
-        endpoint="combined-print-and-e-book-fiction"
       />
       <SpecialBlock
         height="390px"
@@ -27,7 +24,6 @@ function Main() {
         title="Популярные аудиокниги"
         borderRadius="0"
         color="black"
-        endpoint="culture"
       />
     </main>
   );

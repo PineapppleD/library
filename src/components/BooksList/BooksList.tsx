@@ -1,15 +1,23 @@
+import { IBooks } from "../../interfaces/Books";
+import { RootState } from "../../redux/store";
 import Pagination from "../Pagination/Pagination";
 import { BooksListProps } from "./BooksList.props";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+function BooksList(props: BooksListProps) {
+  const books = useSelector((state: RootState) => state.books.books);
 
-function BooksList({ books }: BooksListProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
-
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
 
-  const currentBooks = books.slice(firstPostIndex, lastPostIndex);
+  const [currentBooks, setCurrentBooks] = useState<IBooks[] | never[]>([]);
+
+  useEffect(() => {
+    setCurrentBooks(books);
+    console.log(books);
+  }, [books]);
 
   const handleClick = (where: string, event: React.MouseEvent) => {
     event.preventDefault();

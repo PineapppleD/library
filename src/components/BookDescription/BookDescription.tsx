@@ -3,15 +3,11 @@ import styles from "./BookDescription.module.css";
 import { BookDescriptionProps } from "./BookDescription.props";
 
 function BookDescription({
-  title,
-  description,
-  author,
-  price,
-  book_image,
+  book,
 }: BookDescriptionProps) {
   return (
     <div className={styles.book_information}>
-      <Book className="minibook" imgUrl={book_image} title={title} />
+      <Book className="minibook" book={book} />
       <div className={styles.book_description}>
         <Title
           className={styles.book_title}
@@ -19,11 +15,11 @@ function BookDescription({
           titleSize={28}
           titleWeight="semi-bold"
         >
-          {title}
+          {book.title}
         </Title>
 
         <Text textSize={18} textColor="white">
-          Author: {author}
+          Author: {book.author}
         </Text>
 
         <Text
@@ -32,11 +28,11 @@ function BookDescription({
           textColor="white"
         >
           Description:
-          <br /> {description}
+          <br /> {book.description}
         </Text>
 
         <Text className={styles.price} textSize={16} textColor="golden">
-          Price: {price}
+          Price: {book.price}
         </Text>
 
         <Button

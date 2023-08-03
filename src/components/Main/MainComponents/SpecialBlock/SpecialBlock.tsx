@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 import { Block, Title, Text, Book } from "../../..";
 import styles from "../../Main.module.css";
 import { SpecialBlockProps } from "./SpecialBlock.props";
-import { fetchData } from "../../../../assets";
 import { IBooks } from "../../../../interfaces/Books";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../redux/store";
 
 function SpecialBlock({
   title,
   description,
   color,
-  endpoint,
   background = "#fff",
   borderRadius,
   booktype,
@@ -19,15 +20,12 @@ function SpecialBlock({
 }: SpecialBlockProps) {
   const [books, setBooks] = useState<IBooks[] | never[]>([]);
 
+  const data = useSelector((state: RootState) => state.books.books);
+
   useEffect(() => {
-    (async () => {
-      const data = fetchData(
-        `https://api.nytimes.com/svc/books/v3/lists/current/${endpoint}.json?api-key=`
-      );
-      const res = await data;
-      setBooks(await res.results.books);
-    })();
-  }, []);
+    setBooks(data);
+    console.log(data)
+  }, [data]);
 
   const responsive = {
     superLargeDesktop: {
@@ -69,20 +67,19 @@ function SpecialBlock({
             )}
           </>
 
-          <p className={styles.p}>все</p>
+          <p className={styles.p}>
+            <Link to="/books">все</Link>
+          </p>
         </div>
-        <Carousel responsive={responsive}>
-          {books.map((book, index) => {
-            return (
-              <Book
-                key={index}
-                className={booktype}
-                title={book.title}
-                imgUrl={book.book_image}
-              />
-            );
-          })}
-        </Carousel>
+        {data.length !== 0 ? (
+          <Carousel responsive={responsive}>
+            {books.map((book, index) => {
+              return <Book key={index} className={booktype} book={book} />;
+            })}
+          </Carousel>
+        ) : (
+          "poshel nahui"
+        )}
       </div>
     </Block>
   );

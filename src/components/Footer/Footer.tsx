@@ -1,6 +1,7 @@
 import { Title, Text } from "..";
 import styles from "./Footer.module.css";
 import { telegram, instagram, facebook } from "../../assets/images";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -28,22 +29,22 @@ function Footer() {
           <ul className={styles.footer_nav}>
             <li className={styles.footer_nav_item}>
               <Text textSize={18} textColor="black">
-                Главная
+                <Link to="/">Главная</Link>
               </Text>
             </li>
             <li className={styles.footer_nav_item}>
               <Text textSize={18} textColor="black">
-                Книга
+                <Link to="/books">Книга</Link>
               </Text>
             </li>
             <li className={styles.footer_nav_item}>
               <Text textSize={18} textColor="black">
-                Аудио
+                <Link to="/audio">Аудио</Link>
               </Text>
             </li>
             <li className={styles.footer_nav_item}>
               <Text textSize={18} textColor="black">
-                О нас
+                <Link to="/about">О нас</Link>
               </Text>
             </li>
           </ul>

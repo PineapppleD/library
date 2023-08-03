@@ -8,6 +8,11 @@
     }
 }
 
+.book_cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
 
 .book {
     display: flex;

@@ -3,19 +3,15 @@ import { PaginationProps } from "./Pagination.props";
 import { BookDescription, Button } from "..";
 
 function Pagination({ books, handleClick }: PaginationProps) {
+ 
   return (
     <>
       <ul className={`${styles.bookslist} container`}>
         {books.map((book, index) => {
-          const { title, author, book_image, price, description } = book;
           return (
             <li key={index} className={styles.book}>
               <BookDescription
-                book_image={book_image}
-                title={title}
-                description={description}
-                price={price}
-                author={author}
+                book={book}
               />
             </li>
           );
