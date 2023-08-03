@@ -57,9 +57,9 @@ function Navbar({ setDisplay }: NavbarProps): JSX.Element {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/audio">
+            <NavLink to="/deferredbooks">
               <Text textSize={18} textColor="black">
-                Аудио
+                Отложенные
               </Text>
             </NavLink>
           </li>

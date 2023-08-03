@@ -1,4 +1,4 @@
-import { Button, Logo, Text } from "..";
+import { Button, Logo } from "..";
 import Navbar from "../Navbar/Navbar";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Header.module.css";

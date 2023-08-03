@@ -1,5 +1,4 @@
 import { Header, Hero, Main, Footer } from "../components";
-
 function MainPage() {
   return (
     <>
