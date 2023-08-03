@@ -5,4 +5,5 @@ export interface BooksListProps
     React.HTMLAttributes<HTMLUListElement>,
     HTMLUListElement
   > {
+    books: IBooks[];
 }

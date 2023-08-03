@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { Header, Title } from "../components";
-import Pagination from "../components/Pagination/Pagination";
+import { BooksList, Header, Title } from "../components";
 
 function DeferredBooks() {
   const deferredBooks = useSelector(
@@ -12,9 +11,11 @@ function DeferredBooks() {
     <>
       <Header />
       {deferredBooks.length !== 0 ? (
-        <Pagination handleClick={() => {}} books={deferredBooks}/>
+        <BooksList books={deferredBooks} />
       ) : (
-        <Title titleWeight="bold" titleSize={28} titleColor="black">Нет отложенных книг</Title>
+        <Title titleWeight="bold" titleSize={28} titleColor="black">
+          Нет отложенных книг
+        </Title>
       )}
     </>
   );

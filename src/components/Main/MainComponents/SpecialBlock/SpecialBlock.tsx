@@ -78,7 +78,7 @@ function SpecialBlock({
             })}
           </Carousel>
         ) : (
-          "poshel nahui"
+          "Загружается"
         )}
       </div>
     </Block>

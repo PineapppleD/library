@@ -4,4 +4,5 @@ export interface SearchBarProps
     HTMLDivElement
   > {
   setDisplay: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsButtonClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
