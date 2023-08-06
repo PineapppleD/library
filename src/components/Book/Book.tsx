@@ -4,38 +4,39 @@ import cn from "classnames";
 import styles from "./Book.module.css";
 import { IBooks } from "../../interfaces/Books";
 import { RootState } from "../../redux/store";
-import {
-  addDeferredBook,
-  removeDeferredBook,
-} from "../../redux/deferredBooksSlice";
+import { addDeferredBook, removeDeferredBook } from "../../redux/userSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
-interface BookProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+interface BookProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   book: IBooks;
   className?: string;
 }
 
 function Book({ book, className }: BookProps) {
   const dispatch = useDispatch();
-  const deferredBooks = useSelector(
-    (state: RootState) => state.deferredBooks.deferredBooks
-  );
+  const user = useSelector((state: RootState) => state.user.user);
 
-  const isDeferred = deferredBooks.some(
-    (deferredBook) => deferredBook.title === book.title
-  );
+  const deferredBooks = user?.deferredBooks;
+  const isDeferred = deferredBooks?.some((deferredBook) => deferredBook.title === book.title);
 
   const handleButtonClick = () => {
     if (isDeferred) {
-      dispatch(removeDeferredBook(book.title));
+      dispatch(removeDeferredBook(book.title)); // Update Redux store
     } else {
-      dispatch(addDeferredBook(book));
+      dispatch(addDeferredBook(book)); // Update Redux store
     }
   };
+
+  useEffect(() => {
+    // Save updated user object to localStorage whenever user changes
+    if (user) {
+      const usersData = localStorage.getItem("users");
+      const users = usersData ? JSON.parse(usersData) : [];
+      const updatedUsers = users.map((u: any) => (u.name === user.name ? user : u));
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+    }
+  }, [user]);
 
   return (
     <div className={styles.book_cover}>

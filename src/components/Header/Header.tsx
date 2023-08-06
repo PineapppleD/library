@@ -8,10 +8,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { IBooks } from "../../interfaces/Books";
 import { searchBook, fillSearchValue } from "../../redux/searchSlice";
+import { Link } from "react-router-dom";
+import { removeUser } from "../../redux/userSlice";
 
 function Header() {
   const dispatch = useDispatch();
 
+  const user = useSelector((state: RootState) => state.user.user)
   const [display, setDisplay] = useState(true);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const books = useSelector((state: RootState) => state.books.books);
@@ -45,13 +48,19 @@ function Header() {
               className={styles.header_search}
             />
             <Button
+              onClick={() => {
+                if (user) {
+                  dispatch(removeUser())
+                }
+
+              }}
               className="loginbutton"
               fontSize={16}
               fontWeight={700}
               background="black"
               color="white"
             >
-              Войти
+              {user ? "Выйти" : <Link to="/login">Войти</Link>}
             </Button>
           </div>
         )}

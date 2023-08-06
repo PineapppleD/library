@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import deferredBooksReducer from "./deferredBooksSlice";
 import booksReducer from "./booksSlice";
 import searchReducer from "./searchSlice";
+import userReducer from "./userSlice"
 
 const store = configureStore({
   reducer: {
-    deferredBooks: deferredBooksReducer,
     books: booksReducer,
     search: searchReducer,
+    user: userReducer,
   },
 });
 

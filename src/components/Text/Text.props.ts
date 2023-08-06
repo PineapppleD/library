@@ -6,6 +6,6 @@ export interface TextProps
     HTMLParagraphElement
   > {
   textSize: 16 | 18 | 20 | 24;
-  textColor: "black" | "white" | "gray" | "milk" | "green" | "golden";
+  textColor: "black" | "white" | "gray" | "milk" | "green" | "golden" | "red";
   children: ReactNode;
 }
