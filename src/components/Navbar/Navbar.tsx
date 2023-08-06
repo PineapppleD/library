@@ -3,10 +3,14 @@ import styles from "./Navbar.module.css";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Text } from "..";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 function Navbar({ setDisplay }: NavbarProps): JSX.Element {
   const [menu, setMenu] = useState(false);
   const [screen, setScreen] = useState(window.innerWidth);
+
+  const user = useSelector((state: RootState) => state.user.user);
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,13 +60,15 @@ function Navbar({ setDisplay }: NavbarProps): JSX.Element {
               </Text>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/deferredbooks">
-              <Text textSize={18} textColor="black">
-                Отложенные
-              </Text>
-            </NavLink>
-          </li>
+          {user && (
+            <li>
+              <NavLink to="/deferredbooks">
+                <Text textSize={18} textColor="black">
+                  Отложенные
+                </Text>
+              </NavLink>
+            </li>
+          )}
           <li>
             <NavLink to="/about">
               <Text textSize={18} textColor="black">

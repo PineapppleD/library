@@ -13,3 +13,5 @@ export { default as Book } from "./Book/Book";
 export { default as Footer } from "./Footer/Footer";
 export { default as BookDescription } from "./BookDescription/BookDescription";
 export { default as BooksList } from "./BooksList/BooksList";
+export { default as LoginForm } from "./LoginForm/LoginForm";
+export { default as RegistrationForm } from "./RegistrationForm/RegistrationForm";

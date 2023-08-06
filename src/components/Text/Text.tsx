@@ -19,6 +19,7 @@ function Text({
     milk: textColor === "milk",
     green: textColor === "green",
     golden: textColor === "golden",
+    red: textColor === 'red',
   })}`;
 
   return <p className={`${textClasses} ${className}`}>{children}</p>;
